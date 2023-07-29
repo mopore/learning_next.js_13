@@ -1,7 +1,6 @@
 import { prisma } from "@/db";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { NextResponse } from 'next/server'
 
 async function createTodoOnServer(data: FormData) {
 	"use server";
@@ -13,7 +12,6 @@ async function createTodoOnServer(data: FormData) {
 
 	await prisma.todo.create({ data: { title } });
 	console.log(`New toto created with title: ${title}`);
-	// Redirect to home page
 	redirect("/");
 }
 
